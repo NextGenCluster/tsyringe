@@ -41,7 +41,7 @@ export type Registration<T = any> = {
 export type ParamInfo = TokenDescriptor | InjectionToken<any>;
 
 
-globalThis.__typeInfo = new Map<constructor<any>, ParamInfo[]>();
+global.__typeInfo = new Map<constructor<any>, ParamInfo[]>();
 
 
 /** Dependency Container */
@@ -521,7 +521,7 @@ export class InternalDependencyContainer implements DependencyContainer {
     }
 
     const instance: T = (() => {
-      const paramInfo = globalThis.__typeInfo.get(ctor);
+      const paramInfo = global.__typeInfo.get(ctor);
       if (!paramInfo || paramInfo.length === 0) {
         if (ctor.length === 0) {
           return new ctor();
@@ -582,8 +582,8 @@ export class InternalDependencyContainer implements DependencyContainer {
     }
   }
 }
-if (!globalThis.__GlobalContainer) {
-  globalThis.__GlobalContainer = new InternalDependencyContainer();
+if (!global.__GlobalContainer) {
+  global.__GlobalContainer = new InternalDependencyContainer();
 }
-export const instance: DependencyContainer = globalThis.__GlobalContainer;
+export const instance: DependencyContainer = global.__GlobalContainer;
 export default instance;

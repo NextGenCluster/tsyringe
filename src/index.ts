@@ -16,8 +16,12 @@ export {
 } from "./types";
 
 declare global {
-  var __typeInfo: Map<constructor<any>, ParamInfo[]>;
-  var __GlobalContainer: InternalDependencyContainer;
+  namespace NodeJS {
+      interface Global {
+        __typeInfo: Map<constructor<any>, ParamInfo[]>;
+        __GlobalContainer: InternalDependencyContainer;
+      }
+  }
 }
 export * from "./decorators";
 export * from "./factories";

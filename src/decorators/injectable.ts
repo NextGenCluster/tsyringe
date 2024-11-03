@@ -9,7 +9,7 @@ import {getParamInfo} from "../reflection-helpers";
  */
 function injectable<T>(): (target: constructor<T>) => void {
   return function(target: constructor<T>): void {
-    globalThis.__typeInfo.set(target, getParamInfo(target));
+    global.__typeInfo.set(target, getParamInfo(target));
   };
 }
 

@@ -1,3 +1,6 @@
+import { InternalDependencyContainer, ParamInfo } from "./dependency-container";
+import { constructor } from "./types";
+
 if (typeof Reflect === "undefined" || !Reflect.getMetadata) {
   throw new Error(
     `tsyringe requires a reflect polyfill. Please add 'import "reflect-metadata"' to the top of your entry point.`
@@ -11,6 +14,11 @@ export {
   RegistrationOptions,
   Frequency
 } from "./types";
+
+declare global {
+  var __typeInfo: Map<constructor<any>, ParamInfo[]>;
+  var __GlobalContainer: InternalDependencyContainer;
+}
 export * from "./decorators";
 export * from "./factories";
 export * from "./providers";

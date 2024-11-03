@@ -1,5 +1,5 @@
-import { InternalDependencyContainer, ParamInfo } from "./dependency-container";
-import { constructor } from "./types";
+import {InternalDependencyContainer, ParamInfo} from "./dependency-container"; // eslint-disable-line
+import {constructor} from "./types"; // eslint-disable-line
 
 if (typeof Reflect === "undefined" || !Reflect.getMetadata) {
   throw new Error(
@@ -16,11 +16,11 @@ export {
 } from "./types";
 
 declare global {
-  namespace NodeJS {
-      interface Global {
-        __typeInfo: Map<constructor<any>, ParamInfo[]>;
-        __GlobalContainer: InternalDependencyContainer;
-      }
+  namespace NodeJS { // eslint-disable-line
+    interface Global {
+      __typeInfo: Map<constructor<any>, ParamInfo[]>;
+      __GlobalContainer: InternalDependencyContainer;
+    }
   }
 }
 export * from "./decorators";

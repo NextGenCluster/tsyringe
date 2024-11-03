@@ -10,7 +10,7 @@ describe("Disposable", () => {
 
     it("returns false when dispose method takes too many args", () => {
       const specialDisposable = {
-        dispose(_: any) {}
+        dispose() {}
       };
 
       expect(isDisposable(specialDisposable)).toBeFalsy();

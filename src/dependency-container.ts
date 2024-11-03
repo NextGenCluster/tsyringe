@@ -40,9 +40,7 @@ export type Registration<T = any> = {
 
 export type ParamInfo = TokenDescriptor | InjectionToken<any>;
 
-
 global.__typeInfo = new Map<constructor<any>, ParamInfo[]>();
-
 
 /** Dependency Container */
 export class InternalDependencyContainer implements DependencyContainer {

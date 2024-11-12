@@ -1,11 +1,14 @@
 {
   "name": "@kalendell/tsyringe",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "[![Travis](https://img.shields.io/travis/Microsoft/tsyringe.svg)](https://travis-ci.org/Microsoft/tsyringe/)\r [![npm](https://img.shields.io/npm/v/tsyringe.svg)](https://www.npmjs.com/package/tsyringe)\r [![npm](https://img.shields.io/npm/dt/tsyringe.svg)](https://www.npmjs.com/package/tsyringe)",
   "main": "dist/cjs/index.js",
   "module": "./dist/esm5/index.js",
   "es2015": "./dist/esm2015/index.js",
   "typings": "./dist/typings/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "yarn clean && yarn build:cjs && yarn build:es5 && yarn build:es2015 && yarn build:types",
     "build:cjs": "tsc",

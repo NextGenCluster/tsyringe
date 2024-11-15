@@ -7,15 +7,15 @@ describe("Disposable", () => {
 
       expect(isDisposable(nonDisposable)).toBeFalsy();
     });
-/*
-    it("returns false when dispose method takes too many args", () => {
-      const specialDisposable = {
-        dispose() {}
-      };
-
-      expect(isDisposable(specialDisposable)).toBeFalsy();
-    });
-*/
+    /*
+        it("returns false when dispose method takes too many args", () => {
+          const specialDisposable = {
+            dispose() {}
+          };
+    
+          expect(isDisposable(specialDisposable)).toBeFalsy();
+        });
+    */
     it("returns true for disposable object", () => {
       const disposable: Disposable = {
         dispose() {}
